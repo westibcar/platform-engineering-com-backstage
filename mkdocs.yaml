@@ -1,0 +1,14 @@
+site_name: 'Uday App'
+site_description: 'Documentação de usabilidade do Uday App'
+repo_url: https://github.com/westibcar/projeto-flask
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+  - redirects:
+      redirect_maps:
+        'index.md': 'docs/index.md'
+
+nav:
+  - Overview:
+      - Como usar o APP Uday: 'docs/index.md'
