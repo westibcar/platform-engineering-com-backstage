@@ -1,0 +1,35 @@
+# Ignora arquivos de compilação do Python
+*.pyc
+*.pyo
+*.pyd
+*__pycache__*
+*venv*
+
+# Ignora diretórios de ambiente virtual
+venv/
+env/
+.venv/
+ENV/
+
+# Ignora arquivos de configuração do IDE (ex: VSCode, PyCharm)
+.vscode/
+.idea/
+
+# Ignora arquivos de log
+*.log
+
+# Ignora arquivos temporários
+*.bak
+*.swp
+*.swo
+
+# Ignora arquivos de distribuição do Python
+*.egg
+*.egg-info
+dist/
+build/
+eggs/
+
+# Ignora arquivos de cache do pip
+pip-log.txt
+pip-delete-this-directory.txt
