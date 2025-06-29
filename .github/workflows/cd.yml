@@ -1,0 +1,38 @@
+name: Deploy to ArgoCD
+
+on:
+  workflow_run:
+    workflows: ["Build Docker Image"]
+    types:
+      - completed
+
+jobs:
+  update-image-tag:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório de deployment
+        uses: actions/checkout@v3
+        with:
+          repository: westibcar/projeto-flask
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # precisa de permissão para escrever
+          path: infra
+
+      - name: Configurar Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Atualizar a tag da imagem no Helm values.yaml
+        run: |
+          cd infra
+          IMAGE_TAG=${{ github.event.workflow_run.head_sha }}
+          sed -i "s/tag: .*/tag: ${IMAGE_TAG::7}/" charts/uday-app/values.yaml
+
+      - name: Commit e Push
+        run: |
+          cd infra
+          git add .
+          git commit -m "Atualiza imagem para ${IMAGE_TAG::7}"
+          git push
