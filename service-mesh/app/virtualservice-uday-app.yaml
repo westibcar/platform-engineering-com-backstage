@@ -5,7 +5,7 @@ metadata:
   namespace: uday-app
 spec:
   hosts:
-    - "app.uday.com.br"
+    - "uday-app.uday.com.br"
   gateways:
     - uday-app-gateway
   http:
