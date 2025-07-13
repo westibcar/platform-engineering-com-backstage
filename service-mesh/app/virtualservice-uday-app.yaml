@@ -1,19 +1,19 @@
-apiVersion: networking.istio.io/v1beta1
+apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: uday-app-vs
   namespace: uday-app
 spec:
   hosts:
-    - "uday-app.uday.com.br"
+  - uday-app.uday.com.br 
   gateways:
-    - uday-app-gateway
+  - uday-app-gateway
   http:
-    - match:
-        - uri:
-            prefix: /
-      route:
-        - destination:
-            host: uday-app-service
-            port:
-              number: 80  # Essa porta deve bater com o "port" do Service acima
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: uday-app
+        port:
+          number: 5000

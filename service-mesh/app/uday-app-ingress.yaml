@@ -1,15 +1,15 @@
-apiVersion: networking.istio.io/v1beta1
+apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: uday-app-gateway
   namespace: uday-app
 spec:
   selector:
-    istio: ingressgateway
+    istio: ingressgateway # Isto se refere ao ingressgateway do Istio
   servers:
-    - port:
-        number: 80
-        name: http
-        protocol: HTTP
-      hosts:
-        - "uday-app.uday.com.br"
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - uday-app.uday.com.br
