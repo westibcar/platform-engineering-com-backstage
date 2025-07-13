@@ -4,7 +4,7 @@ metadata:
   name: uday-app
   description: Cadastro de Empresas Uday
   annotations:
-    github.com/project-slug: westibcar/projeto-flask
+    github.com/project-slug: westibcar/platform-engineering-com-backstage
     backstage.io/techdocs-ref: dir:.
 spec:
   type: service

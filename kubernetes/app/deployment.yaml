@@ -1,7 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: uday-app
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: uday-app
+  namespace: uday-app
   labels:
     app: uday-app
 spec:
@@ -16,6 +24,6 @@ spec:
     spec:
       containers:
       - name: uday-app
-        image: udaytc/uday_app:v1
+        image: udaytc/add-uday-service:4eab094
         ports:
         - containerPort: 5000
