@@ -8,7 +8,7 @@ spec:
   profile:
     displayName: DevOps
     email: devops@uday.com.br
-    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Fluffy&backgroundColor=ffdfbf
+    picture: https://github.com/westibcar/platform-engineering-com-backstage/blob/main/Imagens/devops-icone.png
   parent: infrastructure
   children: []
 
