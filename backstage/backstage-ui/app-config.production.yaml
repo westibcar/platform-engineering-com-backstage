@@ -36,8 +36,3 @@ catalog:
       target: /app/identidades/usuarios.yaml
     - type: file
       target: /app/identidades/grupos.yaml
-
-integrations:
-  github:
-    - host: github.com
-      token: ${GITHUB_TOKEN}
