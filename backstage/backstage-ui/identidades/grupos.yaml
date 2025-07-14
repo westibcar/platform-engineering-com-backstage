@@ -23,5 +23,5 @@ spec:
   profile:
     displayName: Backstage
     email: infrastructure@uday.com.br
-    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Fluffy&backgroundColor=ffdfbf
+    picture: https://github.com/westibcar/platform-engineering-com-backstage/blob/main/Imagens/infraestrutura-icone.png
   children: []
