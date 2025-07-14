@@ -1,0 +1,27 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops
+  description: Developer and Operation 
+spec:
+  type: Operations
+  profile:
+    displayName: DevOps
+    email: devops@uday.com.br
+    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Fluffy&backgroundColor=ffdfbf
+  parent: infrastructure
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: infrastructure
+  description: Operation
+spec:
+  type: Operations
+  profile:
+    displayName: Backstage
+    email: infrastructure@uday.com.br
+    picture: https://api.dicebear.com/7.x/identicon/svg?seed=Fluffy&backgroundColor=ffdfbf
+  children: []

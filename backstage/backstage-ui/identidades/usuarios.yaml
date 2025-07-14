@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: westibcar
+spec:
+  profile:
+    # Intentional no displayName for testing
+    email: wesley@example.com
+    picture: https://avatars.githubusercontent.com/u/43549868?s=96&v=4
+  memberOf: [devops]
+  

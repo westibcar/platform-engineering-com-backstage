@@ -1,0 +1,38 @@
+app:
+  # Should be the same as backend.baseUrl when using the `app-backend` plugin.
+  baseUrl: http://localhost:7007
+  listen:
+    host: 0.0.0.0
+    
+backend:
+  baseUrl: http://localhost:7007
+  listen: ':7007'
+
+  database:
+    client: pg
+    connection:
+      host: postgres
+      port: 5432
+      user: backstage_user
+      password: AA#R3f443
+      database: backstage_db
+
+auth:
+  environment: production
+  providers:
+    github:
+      production:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        signIn:
+          resolvers:
+            - resolver: usernameMatchingUserEntityName
+
+catalog:
+  rules:
+    - allow: [User, Component, System, API, Resource, Location]
+  locations:
+    - type: file
+      target: /app/backstage-ui/identidades/usuarios.yaml
+    - type: file
+      target: /app/backstage-ui/identidades/grupos.yaml
