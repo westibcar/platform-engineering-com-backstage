@@ -30,9 +30,14 @@ auth:
 
 catalog:
   rules:
-    - allow: [User, Component, System, API, Resource, Location]
+    - allow: [Group, User, Component, System, API, Resource, Location]
   locations:
     - type: file
-      target: /app/backstage-ui/identidades/usuarios.yaml
+      target: /app/identidades/usuarios.yaml
     - type: file
-      target: /app/backstage-ui/identidades/grupos.yaml
+      target: /app/identidades/grupos.yaml
+
+integrations:
+  github:
+    - host: github.com
+      token: ${GITHUB_TOKEN}

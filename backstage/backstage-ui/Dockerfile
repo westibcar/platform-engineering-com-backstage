@@ -5,7 +5,7 @@ ENV PYTHON=/usr/bin/python3
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && \
-    apt-get install -y --no-install-recommends python3 g++ build-essential && \
+    apt-get install -y --no-install-recommends python3 python3-venv g++ build-essential && \
     rm -rf /var/lib/apt/lists/*
 
 USER node
@@ -28,5 +28,7 @@ RUN --mount=type=cache,target=/home/node/.cache/yarn,sharing=locked,uid=1000,gid
 
 COPY --chown=node:node packages/backend/dist/bundle.tar.gz app-config*.yaml ./
 RUN tar xzf bundle.tar.gz && rm bundle.tar.gz
+
+COPY --chown=node:node ./identidades ./identidades
 
 CMD ["node", "packages/backend", "--config", "app-config.yaml", "--config", "app-config.production.yaml"]
